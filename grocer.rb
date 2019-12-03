@@ -26,8 +26,21 @@ def consolidate_cart(cart)
   new_cart
 end
 
+def mk_coupon_hash(c)
+  rounded_unit_price = (c[:cost].to_f * 1.0 / c[:num]).round(2)
+  {
+    :item => "#{c[:item]} W/COUPON",
+    :price => rounded_unit_price,
+    :count => c[:num]
+  }
+end
+
 def apply_coupon_to_cart(matching_item, coupon, cart)
-  
+  matching_item[:count] -= coupon[:num]
+  item_with_coupon = mk_coupon_hash(coupon)
+  item_with_coupon[:clearance] = matching_item[:clearance]
+  cart << item_with_coupon
+end 
 
 def apply_coupons(cart, coupons)
   index = 0 
