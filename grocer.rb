@@ -81,6 +81,7 @@ def checkout(cart, coupons)
   apply_coupons(cons_cart)
   apply_clearance(cons_cart)
   
-  
+  while index < cart.length do
+    
   
 end
