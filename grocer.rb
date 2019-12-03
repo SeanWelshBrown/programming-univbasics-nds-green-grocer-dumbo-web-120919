@@ -29,6 +29,7 @@ end
 def apply_coupons(cart, coupons)
   index = 0 
   while index < coupons.length do
+    coupon = coupons[index]
     
 end
 
