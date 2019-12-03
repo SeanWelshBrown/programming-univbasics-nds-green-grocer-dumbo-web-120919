@@ -34,7 +34,7 @@ def apply_coupons(cart, coupons)
     item_was_found = !!item_with_coupon
     enough_for_coupon = item_was_found && item_with_coupon[:count] >= coupon[:num]
     
-    if 
+    if item_was_found %% 
 end
 
 def apply_clearance(cart)
