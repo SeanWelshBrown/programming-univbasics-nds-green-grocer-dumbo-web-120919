@@ -43,15 +43,17 @@ def apply_coupon_to_cart(matching_item, coupon, cart)
 end 
 
 def apply_coupons(cart, coupons)
-  index = 0 
-  while index < coupons.length do
-    coupon = coupons[index]
+  i = 0
+  while i < coupons.count do
+    coupon = coupons[i]
     item_with_coupon = find_item_by_name_in_collection(coupon[:item], cart)
-    item_was_found = !!item_with_coupon
-    enough_for_coupon = item_was_found && item_with_coupon[:count] >= coupon[:num]
-    
-    if item_was_found and enough_for_coupon
-      
+    item_is_in_basket = !!item_with_coupon
+    count_is_big_enough_to_apply = item_is_in_basket && item_with_coupon[:count] >= coupon[:num]
+
+    if item_is_in_basket and count_is_big_enough_to_apply
+      apply_coupon_to_cart(item_with_coupon, coupon, cart)
+    end
+    i += 1
 end
 
 def apply_clearance(cart)
