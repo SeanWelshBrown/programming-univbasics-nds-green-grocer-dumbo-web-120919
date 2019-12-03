@@ -30,7 +30,7 @@ def apply_coupons(cart, coupons)
   index = 0 
   while index < coupons.length do
     coupon = coupons[index]
-    
+    item_with_coupon = find_item_by_name_in_collection
 end
 
 def apply_clearance(cart)
