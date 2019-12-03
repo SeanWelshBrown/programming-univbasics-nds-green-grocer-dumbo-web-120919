@@ -32,7 +32,8 @@ def apply_coupons(cart, coupons)
     coupon = coupons[index]
     item_with_coupon = find_item_by_name_in_collection(coupon[:item], cart)
     item_was_found = !!item_with_coupon
-    enough_for_coupon = item_was_found && item_with_coupon[:count] >= coupon[]
+    enough_for_coupon = item_was_found && item_with_coupon[:count] >= coupon[:num]
+    
 end
 
 def apply_clearance(cart)
