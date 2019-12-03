@@ -89,6 +89,6 @@ def checkout(cart, coupons)
     new_total = (total * 0.9).round(2)
   end
   
-  total
+  new_total
   
 end
