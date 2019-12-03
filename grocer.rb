@@ -62,7 +62,7 @@ def apply_clearance(cart)
   index = 0 
   while index < cart.length
     item = cart[:item]
-    if item
+    if item[:clearance]
 end
 
 def checkout(cart, coupons)
